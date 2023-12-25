@@ -18,13 +18,15 @@ time_steps = 60
 
 sequences = []
 labels = []
-#  (10, 7)矩陣
+#  (60, 7)矩陣 時間序列數據轉換成矩陣形式是為了讓模型能夠有效地學習時間相依性
 for i in range(len(scaled_data) - time_steps):
     seq = scaled_data[i:i + time_steps, 0:7]
     label = scaled_data[i + time_steps, 6]  # 使用 'Close' 列作為預測目標
     sequences.append(seq)
     labels.append(label)
 
+sequences
+labels
 sequences = np.array(sequences)
 labels = np.array(labels)
 # .dtypes
